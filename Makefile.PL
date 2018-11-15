@@ -8,6 +8,7 @@ WriteMakefile(
     VERSION_FROM  => 'lib/Parse/Distname.pm',
     ABSTRACT_FROM => 'lib/Parse/Distname.pm',
     LICENSE       => 'perl',
+    test          => {TESTS => 't/*.t t/*/*.t'},
     META_MERGE => {
         resources => {
             repository => 'https://github.com/charsbar/Parse-Distname',
