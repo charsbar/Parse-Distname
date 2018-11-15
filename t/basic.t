@@ -31,7 +31,7 @@ eq_or_diff [Parse::Distname::distname_info($path)] => [
 
 # accessors
 
-my $info = Parse::Distname->new($path);
+   $info = Parse::Distname->new($path);
 is $info->dist => "Parse-Distname", "dist";
 is $info->version => "0.01", "version";
 is $info->maturity => "released", "maturity";
