@@ -1,0 +1,6 @@
+language: perl
+perl:
+  - 5.8
+  - 5.26
+before_install:
+  - cpanm -n ExtUtils::MakeMaker::CPANfile
