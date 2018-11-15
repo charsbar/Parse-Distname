@@ -66,7 +66,7 @@ sub parse_distname {
   $path =~ s/($SUFFRE)//i;
   $res{extension} = $1 or return;
 
-  $res{distv} = $path;
+  $res{name_and_version} = $path;
 
   # Parse dist-version
   my $info = _parse_distv($path);
@@ -187,7 +187,7 @@ sub _parse_distv {
   }
 
   return {
-    dist => $dist,
+    name => $dist,
     version => $version,
     version_number => $version_number,
     is_dev => $dev,
@@ -208,15 +208,15 @@ sub distname_info {
   @$info{qw/name version is_dev/};
 }
 
-sub dist      { shift->{dist} }
+sub dist      { shift->{name} }
 sub version   { shift->{version} }
 sub maturity  { shift->{is_dev} ? 'developer' : 'released' }
 sub filename  {
   my $self = shift;
-  join "", grep defined $_, @$self{qw/subdir distv extension/};
+  join "", grep defined $_, @$self{qw/subdir name_and_version extension/};
 }
 sub cpanid    { shift->{pause_id} }
-sub distvname { shift->{distv} }
+sub distvname { shift->{name_and_version} }
 sub extension { substr(shift->{extension}, 1) }
 sub pathname  { shift->{arg} }
 
@@ -320,24 +320,24 @@ directory. If the name contains such a subdirectory, it's kept here.
 Perl 6 distributions are (almost) always put under Perl6/
 subdirectory under each author's directory (with a few exceptions).
 
-=item distv
+=item name_and_version
 
 The name and version of the distribution, without an extension and
 directory parts, which should not be empty as long as the
 distribution has an extension that PAUSE accepts.
 
-  say parse_distname('AUTHOR/sub/Dist-0.01.tar.gz')->{distv};
+  say parse_distname('AUTHOR/sub/Dist-0.01.tar.gz')->{name_and_version};
   # Dist-0.01
 
-=item dist
+=item name
 
 The name part of the distribution. This may be empty if no valid
 name is found
 
-  say parse_distname('AUTHOR/sub/Dist-0.01.tar.gz')->{dist};
+  say parse_distname('AUTHOR/sub/Dist-0.01.tar.gz')->{name};
   # Dist
   
-  say parse_distname('AUTHOR/v0.1.tar.gz')->{dist};
+  say parse_distname('AUTHOR/v0.1.tar.gz')->{name};
   # (empty)
 
 =item version
