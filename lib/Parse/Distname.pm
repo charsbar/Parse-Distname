@@ -52,7 +52,7 @@ sub parse_distname {
     $author_dir = "L/LO/LOCAL/";
   }
   $res{pause_id}  = $pause_id;
-  $res{cpan_path} = "$author_dir/$path";
+  $res{cpan_path} = "$author_dir$path";
 
   # Now the path should be (subdir/)dist-version
   if ($path =~ s!^(.+/)!!) {
