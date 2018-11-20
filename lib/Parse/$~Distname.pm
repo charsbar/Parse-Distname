@@ -73,7 +73,7 @@ sub parse_distname {
   $res{$_} = $info->{$_} for keys %$info;
 
   return \%res;
-}
+}	
 
 sub _parse_distv {
   my $distv = shift;
