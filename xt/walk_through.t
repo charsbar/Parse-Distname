@@ -295,14 +295,14 @@ C/CD/CDONLEY/netldapapi-139a-winnt.zip (1997)
 C/CD/CDRAKE/Crypt-MatrixSSL3.tar.gz (2012)
    "cpanid": "CDRAKE",
 -  "dist": "Crypt",
-+  "dist": "Crypt-MatrixSSL",
++  "dist": "Crypt-MatrixSSL3",
    "distvname": "Crypt-MatrixSSL3",
    "extension": "tar.gz",
    "filename": "Crypt-MatrixSSL3.tar.gz",
    "maturity": "released",
    "pathname": "C/CD/CDRAKE/Crypt-MatrixSSL3.tar.gz",
 -  "version": "MatrixSSL3",
-+  "version": "3",
++  "version": null,
 
 C/CR/CRLCU/v0.1.tar.gz (2016)
    "cpanid": "CRLCU",
