@@ -235,7 +235,7 @@ sub properties {
 
 # extra accessors
 
-sub is_perl6       { shift->{is_perl6} }
+sub is_perl6       { shift->{perl6} }
 sub version_number { shift->{version_number} }
 
 1;
